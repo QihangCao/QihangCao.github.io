@@ -200,8 +200,7 @@ a:hover {
   font-size: 0.92rem;
 }
 
-.timeline,
-.simple-list {
+.timeline {
   display: grid;
   gap: 8px;
   margin: 0;
@@ -209,8 +208,7 @@ a:hover {
   list-style: none;
 }
 
-.timeline li,
-.simple-list li {
+.timeline li {
   display: grid;
   grid-template-columns: 88px minmax(0, 1fr);
   gap: 14px;
@@ -288,28 +286,6 @@ time {
   font-size: 0.92rem;
 }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.project-card {
-  padding: 18px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-
-.project-card h3 {
-  margin: 0 0 8px;
-  font-size: 1rem;
-}
-
-.project-card p {
-  color: var(--muted);
-}
-
 .footer {
   width: min(var(--max-width), calc(100% - 32px));
   margin: 0 auto 28px;
@@ -377,8 +353,7 @@ time {
     flex-direction: column;
   }
 
-  .timeline li,
-  .simple-list li {
+  .timeline li {
     grid-template-columns: 1fr;
     gap: 0;
   }
@@ -396,9 +371,5 @@ time {
   .pub-thumb {
     width: 100%;
     max-width: 320px;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
   }
 }
