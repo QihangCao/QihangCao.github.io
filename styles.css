@@ -7,6 +7,7 @@
   --accent: #0f766e;
   --accent-strong: #0b5f59;
   --accent-soft: #e6f4f1;
+  --badge-blue: #2563eb;
   --blue-soft: #eef4fb;
   --chip: #eef6f5;
   --shadow: 0 18px 42px rgba(31, 41, 51, 0.08);
@@ -255,6 +256,11 @@ a:hover {
   border-radius: 8px;
 }
 
+.timeline li:hover {
+  background: #ffffff;
+  border-color: #cdd9e5;
+}
+
 time {
   color: var(--accent-strong);
   font-weight: 700;
@@ -263,7 +269,7 @@ time {
 .publication {
   position: relative;
   display: grid;
-  grid-template-columns: 74px 190px minmax(0, 1fr);
+  grid-template-columns: 210px minmax(0, 1fr);
   gap: 20px;
   align-items: start;
   margin: 0 0 16px;
@@ -272,6 +278,7 @@ time {
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow-soft);
+  min-width: 0;
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
@@ -285,24 +292,11 @@ time {
   transform: translateY(-1px);
 }
 
-.pub-badge {
-  align-self: start;
-  width: 62px;
-  padding: 5px 6px;
-  color: var(--accent-strong);
-  background: var(--accent-soft);
-  border: 1px solid #c9e5e0;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-align: center;
-  letter-spacing: 0;
-}
-
 .pub-thumb {
+  position: relative;
   display: grid;
   place-items: center;
-  width: 190px;
+  width: 210px;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--blue-soft);
@@ -317,14 +311,32 @@ time {
   object-fit: contain;
 }
 
+.pub-label {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  z-index: 1;
+  padding: 5px 9px;
+  color: #ffffff;
+  background: var(--badge-blue);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.26);
+  font-size: 0.7rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
 .pub-body h3 {
   margin: 0 0 6px;
   font-size: 1.08rem;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .pub-body h3 a {
   color: var(--ink);
+  overflow-wrap: anywhere;
 }
 
 .pub-body h3 a:hover {
@@ -335,6 +347,7 @@ time {
 .venue {
   color: var(--muted);
   font-size: 0.95rem;
+  overflow-wrap: anywhere;
 }
 
 .venue {
@@ -373,17 +386,12 @@ time {
   }
 
   .publication {
-    grid-template-columns: 76px minmax(0, 1fr);
+    grid-template-columns: 220px minmax(0, 1fr);
     align-items: start;
   }
 
   .pub-thumb {
-    grid-column: 2;
     width: min(100%, 220px);
-  }
-
-  .pub-body {
-    grid-column: 1 / -1;
   }
 }
 
